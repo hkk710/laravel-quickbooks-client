@@ -20,6 +20,8 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function boot()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../../config/quickbooks.php', 'quickbooks');
+        
         $this->registerMiddleware();
 
         $this->registerPublishes();
@@ -36,7 +38,7 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../../config/quickbooks.php', 'quickbooks');
+        //
     }
 
     /**
